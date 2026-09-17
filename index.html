@@ -23,6 +23,7 @@
 }
 
 *{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
 
 body{
   margin:0;
@@ -125,6 +126,7 @@ aside.barra-lateral{
   font-size:1rem;
   text-decoration:none;
   color: var(--cor2);
+  transition: color .2s, padding-left .2s;
 }
 .caixa-nav a:hover{ color: var(--cor8); padding-left: 0.5rem; }
 .romano{ color:var(--cor7); margin-right:0.5rem; font-family: var(--fonte-texto); }
@@ -240,15 +242,16 @@ footer{
 
   <aside class="barra-lateral">
 	<nav class="caixa caixa-nav" aria-label="Índice">
-  	<div class="titulo-caixa">índice</div>
-  	<div class="corpo-caixa">
-    	<ul>
-      	<li><a href="design-social">I. Design e função social</a></li>
-      	<li><a href="arquitetura-hostil">II. Arquitetura hostil</a></li>
-      	<li><a href="inclusao-urbana">III. Tecnologia e inclusão</a></li>
-    	</ul>
-  	</div>
-	</nav>
+  <div class="titulo-caixa">índice</div>
+  <div class="corpo-caixa">
+    <ul>
+      <li><a href="#design-social">I. Design e função social</a></li>
+      <li><a href="#arquitetura-hostil">II. Arquitetura hostil</a></li>
+      <li><a href="#inclusao-urbana">III. Tecnologia e inclusão</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 	<div class="caixa caixa-temas">
   	<div class="titulo-caixa">temas abordados</div>
@@ -339,3 +342,8 @@ footer{
 
 </body>
 </html>
+
+
+
+
+
