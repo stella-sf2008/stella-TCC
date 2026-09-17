@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>♱ ahostilidadedacidade.net ♱</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --cor1: #c4bfac;  /* bege claro - texto principal */
+  --cor2: #a49c88;  /* bege apagado - texto secundário */
+  --cor3: #271118;  /* vinho escuro - fundo */
+  --cor4: #170a0e;  /* vinho bem escuro - fundo profundo */
+  --cor5: #1e0f14;  /* vinho médio - fundo das caixas */
+  --cor6: #68525c;  /* mauve - destaque */
+  --cor7: #9a7e88;  /* mauve claro - detalhes */
+  --cor8: #ded7c4;  /* osso - títulos */
+  --cor9: #4a3038;  /* linha/borda */
+  --fonte-titulo: "UnifrakturCook", serif;
+  --fonte-texto: "Times New Roman", serif;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background: var(--cor4);
+  color: var(--cor1);
+  font-family: var(--fonte-texto);
+  font-size:16px;
+  line-height:1.5;
+}
+
+a{ color:var(--cor8); }
+::selection{ background:var(--cor6); color:var(--cor1); }
+h1,h2,h3{ font-weight:400; }
+strong{ color:var(--cor8); }
+em.termo{ font-style:italic; color:var(--cor2); }
+
+/* ============ banner ============ */
+header.faixa{
+  text-align:center;
+  padding: 2.5rem 1rem 2rem;
+  border-bottom: 3px double var(--cor9);
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), transparent 60%), var(--cor3);
+}
+
+.tiras-crt{
+  display:flex; justify-content:center; gap:10px;
+  opacity:0.5; margin-bottom:1.5rem; flex-wrap:wrap;
+}
+.tiras-crt span{
+  width:45px; height:30px;
+  border:2px solid var(--cor2);
+  background: linear-gradient(160deg, #3a3028, #14100e);
+  position:relative;
+}
+.tiras-crt span::after{
+  content:""; position:absolute; inset:5px;
+  border:1px solid rgba(196,191,172,0.3);
+}
+
+h1.logo{
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  margin:0;
+  color: var(--cor8);
+  text-shadow: 2px 2px 0 var(--cor4), 0 0 20px rgba(154,126,136,0.6);
+}
+
+.faixa .subtitulo{
+  font-family: var(--fonte-texto);
+  font-size:0.75rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color: var(--cor7);
+  margin: 0.5rem 0 0;
+}
+
+/* ============ layout ============ */
+.moldura{
+  max-width: 1180px;
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: 210px 1fr;
+  gap: 1.5rem;
+  padding: 2rem 1rem 3rem;
+  align-items:start;
+}
+
+/* ---- caixa (módulo compartilhado) ---- */
+.caixa{
+  border: 1px solid var(--cor9);
+  background: var(--cor5);
+  box-shadow: inset 0 0 0 3px var(--cor4);
+}
+.titulo-caixa{
+  font-family: var(--fonte-texto);
+  font-size:0.75rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color: var(--cor8);
+  background: linear-gradient(180deg, var(--cor6), #4d3a42);
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--cor9);
+  display:flex; align-items:center; gap:0.5rem;
+}
+.titulo-caixa::before{ content:"✦"; font-size:0.7rem; }
+.corpo-caixa{ padding: 1rem 1rem 1rem; }
+
+/* ---- barra lateral ---- */
+aside.barra-lateral{
+  position: sticky; top: 1.5rem;
+  display:flex; flex-direction:column; gap:1.5rem;
+}
+
+.caixa-nav ul{ list-style:none; margin:0; padding:0; }
+.caixa-nav li{ border-top:1px dashed var(--cor9); }
+.caixa-nav li:first-child{ border-top:none; }
+.caixa-nav a{
+  display:block;
+  padding: 0.5rem 0;
+  font-size:1rem;
+  text-decoration:none;
+  color: var(--cor2);
+}
+.caixa-nav a:hover{ color: var(--cor8); padding-left: 0.5rem; }
+.romano{ color:var(--cor7); margin-right:0.5rem; font-family: var(--fonte-texto); }
+
+.lista-temas{ display:flex; flex-wrap:wrap; gap:5px; }
+.lista-temas div{
+  width:40px; height:40px;
+  border:1px solid var(--cor9);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.6rem; text-align:center; line-height:1;
+  font-family: var(--fonte-texto);
+  color: var(--cor8);
+  background: linear-gradient(160deg, #34222a, #1c0f13);
+}
+
+.caixa-nota p{ margin:0 0 0.5rem; font-size:0.85rem; color:var(--cor2); }
+.caixa-nota p:last-child{ margin-bottom:0; }
+
+/* ---- conteúdo principal ---- */
+section.artigo{ margin-bottom: 2rem; scroll-margin-top: 1rem; }
+.artigo .titulo-caixa{ justify-content:space-between; }
+.etiqueta{ font-style:italic; opacity:0.8; text-transform:none; letter-spacing:0; }
+
+.artigo .corpo-caixa p{ margin: 0 0 1rem; text-align:justify; }
+.artigo .corpo-caixa p:first-of-type::first-letter{
+  font-family: var(--fonte-texto);
+  font-size:2.5rem;
+  float:left;
+  line-height:0.7;
+  padding: 0 0.15em 0 0;
+  color: var(--cor7);
+}
+
+/* ---- opinião ---- */
+.opiniao{
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--cor7);
+  background: rgba(0,0,0,0.15);
+}
+.rotulo-opiniao{
+  display:block;
+  font-family: var(--fonte-texto);
+  font-size:0.65rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color: var(--cor7);
+  margin-bottom: 0.5rem;
+}
+.opiniao p{ margin:0; font-style:italic; color: var(--cor8); font-size:1rem; }
+
+/* ---- imagens ---- */
+figure.prancha{
+  margin: 1.5rem auto;
+  max-width: 90%;
+  border: 5px solid var(--cor8);
+  outline: 1px solid var(--cor9);
+  background: var(--cor8);
+  box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+  transform: rotate(-1deg);
+}
+figure.prancha.inclinar-dir{ transform: rotate(1deg); }
+figure.prancha img{
+  display:block; width:100%; height:auto;
+  filter: sepia(30%) saturate(55%) contrast(110%) brightness(90%);
+}
+figure.prancha figcaption{
+  font-family: var(--fonte-texto);
+  font-size:0.7rem;
+  color: var(--cor4);
+  text-align:center;
+  padding: 0.5rem 0.5rem 0.5rem;
+}
+
+.divisor{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin: 0.5rem 0 1.5rem; color: var(--cor7);
+}
+.divisor::before, .divisor::after{
+  content:""; height:1px; flex:1; max-width:120px;
+  background: linear-gradient(90deg, transparent, var(--cor9), transparent);
+}
+
+/* ---- rodapé ---- */
+footer{
+  text-align:center;
+  padding: 2rem 1rem 3rem;
+  border-top: 3px double var(--cor9);
+  font-family: var(--fonte-texto);
+  font-size:0.7rem;
+  letter-spacing:0.1em;
+  color: var(--cor2);
+}
+.cruz{ color: var(--cor7); margin-bottom:0.5rem; font-size:1rem; }
+
+/* ---- responsivo ---- */
+@media (max-width: 780px){
+  .moldura{ grid-template-columns: 1fr; }
+  aside.barra-lateral{ position:static; flex-direction:row; flex-wrap:wrap; }
+  aside.barra-lateral > .caixa{ flex:1 1 220px; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="faixa">
+	<h1 class="logo">A hostilidade da cidade</h1>
+  <p class="subtitulo">Design, cidade e desamparo</p>
+</header>
+
+<div class="moldura">
+
+  <aside class="barra-lateral">
+	<nav class="caixa caixa-nav" aria-label="Índice">
+  	<div class="titulo-caixa">índice</div>
+  	<div class="corpo-caixa">
+    	<ul>
+      	<li><a href="design-social">I. Design e função social</a></li>
+      	<li><a href="arquitetura-hostil">II. Arquitetura hostil</a></li>
+      	<li><a href="inclusao-urbana">III. Tecnologia e inclusão</a></li>
+    	</ul>
+  	</div>
+	</nav>
+
+	<div class="caixa caixa-temas">
+  	<div class="titulo-caixa">temas abordados</div>
+  	<div class="corpo-caixa">
+    	<div class="lista-temas">
+      	<div>DESIGN<br>SOCIAL</div>
+      	<div>DIREITO<br>À CIDADE</div>
+      	<div>ANTI<br>HOSTIL</div>
+    	</div>
+  	</div>
+	</div>
+
+	<div class="caixa caixa-nota">
+  	<div class="titulo-caixa">nota</div>
+  	<div class="corpo-caixa">
+    	<p>caderno de estudos sobre design social e arquitetura do desprezo nas cidades contemporâneas.</p>
+    	<p>três entradas, sem data — o assunto não envelhece.</p>
+  	</div>
+	</div>
+  </aside>
+
+  <main class="conteudo">
+
+	<section class="artigo" id="design-social">
+  	<div class="caixa">
+    	<div class="titulo-caixa"><span>I. design e função social</span><span class="etiqueta">papanek &amp; bürdek</span></div>
+    	<div class="corpo-caixa">
+      	<p>O design busca criar objetos, imagens e soluções que sejam funcionais, acessíveis e capazes de resolver problemas da sociedade. Segundo Bürdek e Papanek, o design não deve se limitar à estética ou ao consumo, mas também possuir uma <strong>responsabilidade social</strong>. Nesse contexto, o design social procura atender principalmente pessoas e comunidades em situação de vulnerabilidade, promovendo inclusão, autonomia, conforto e dignidade.</p>
+
+      	<div class="opiniao">
+        	<span class="rotulo-opiniao">opinião</span>
+        	<p>Acho que a inovação só vale a pena quando resolve um problema real de alguém — não basta ser bonita ou nova, ela precisa devolver dignidade a quem menos tem acesso a soluções.</p>
+      	</div>
+
+      	<p>Exemplos como o <strong>Hippo Water Roller</strong>, que facilita o transporte de água, e o <strong>Liftware</strong>, que auxilia pessoas com Parkinson durante a alimentação, demonstram como o design pode melhorar diretamente a qualidade de vida.</p>
+    	</div>
+  	</div>
+	</section>
+
+	<div class="divisor" aria-hidden="true">✝</div>
+
+	<section class="artigo" id="arquitetura-hostil">
+  	<div class="caixa">
+    	<div class="titulo-caixa"><span>II. arquitetura hostil</span><span class="etiqueta">segregação &amp; cidade</span></div>
+    	<div class="corpo-caixa">
+      	<p>A arquitetura hostil consiste na criação de espaços urbanos com elementos que dificultam ou impedem sua utilização por determinados grupos, principalmente pessoas em situação de rua. Bancos desconfortáveis, divisórias, pedras, grades e estruturas pontiagudas são exemplos dessa prática, que prioriza a aparência e a "limpeza" dos espaços em detrimento da dignidade humana.</p>
+
+      	<figure class="prancha inclinar-esq">
+        	<img src="images/espinhos.png">
+              	</figure>
+
+      	<p>Essa realidade está relacionada à <strong>segregação socioespacial</strong>, na qual as diferenças econômicas determinam quem pode ocupar e utilizar determinados lugares. Além disso, a população em situação de rua enfrenta problemas como falta de moradia, desemprego, violência, preconceito e dificuldade de acesso à saúde.</p>
+
+      	<figure class="prancha inclinar-dir">
+        	<img src="images/banco.png">
+               	</figure>
+
+      	<div class="opiniao">
+        	<span class="rotulo-opiniao">opinião</span>
+        	<p>Pra mim, um espaço público cheio de pinos e grades diz muito mais sobre quem projetou do que sobre quem é "afastado" por ele. Cidade de verdade é a que cabe todo mundo, não só quem incomoda menos.</p>
+      	</div>
+
+      	<p>Nesse sentido, o espaço público deveria ser entendido como um espaço comum e democrático, garantindo a convivência entre diferentes grupos e o <em class="termo">direito à cidade</em>, conforme os direitos sociais previstos na Constituição Federal.</p>
+    	</div>
+  	</div>
+	</section>
+
+	<div class="divisor" aria-hidden="true">✝</div>
+
+	<section class="artigo" id="inclusao-urbana">
+  	<div class="caixa">
+    	<div class="titulo-caixa"><span>III. tecnologia e inclusão</span><span class="etiqueta">design social 2.0</span></div>
+    	<div class="corpo-caixa">
+      	<p>Como alternativa à arquitetura hostil, o <strong>design social</strong> propõe espaços e produtos que promovam inclusão, acolhimento e participação. Exemplos como os bancos-abrigo, o projeto Lava Mãe, que transforma ônibus em unidades móveis de higiene, e os banheiros públicos autolimpantes mostram como o design e a tecnologia podem ser utilizados para atender às necessidades da população vulnerável.</p>
+
+      	<div class="opiniao">
+        	<span class="rotulo-opiniao">opinião</span>
+        	<p>Acredito que tecnologia só faz sentido quando escuta quem vai usá-la. De nada adianta simular um projeto urbano bonito no computador se a população que vive ali não tem voz nas decisões.</p>
+      	</div>
+
+      	<p>Dessa forma, a tecnologia deixa de ser apenas uma ferramenta técnica e passa a contribuir para a justiça social. O objetivo é construir cidades mais acessíveis e democráticas, nas quais o design se adapte às necessidades das pessoas, e não seja utilizado como instrumento de exclusão.</p>
+    	</div>
+  	</div>
+	</section>
+
+  </main>
+</div>
+
+</body>
+</html>
